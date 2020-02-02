@@ -18,8 +18,7 @@ public class EventLoop {
     public void restart() {
         kill = false;
 
-        worker = new Thread(new Runnable(){
-        
+        worker = new Thread(new Runnable() {
             @Override
             public void run() {
                 work();
@@ -64,10 +63,9 @@ public class EventLoop {
                         worker.wait();
                     }
                 } catch (Exception e) {
-                    continue;
+                    e.printStackTrace();
                 }
             }
         }
-        
     }
 }
